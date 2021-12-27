@@ -64,8 +64,11 @@ const Transaction = {
      * @param {*} index 
      */
     remove(index) {
-        this.all.splice(index, 1)
-        App.reload()
+        if (confirm("Deseja mesmo excluir essa transação?")) {
+            this.all.splice(index, 1)
+            App.reload()
+
+        }
     },
 
     /**
@@ -130,7 +133,7 @@ const DOM = {
             <td class="${classCSS}"> ${amount}</td>
             <td class="date">${transaction.date}</td>
             <td>
-                <img onclick="Transaction.remove(${index})" src="././assets/minus.svg" alt="Remover Transação">
+                <img onclick="Transaction.remove(${index})" src="././assets/minus.svg" title="Apagar Transação" alt="Apagar Transação">
             </td>
         `
         return html

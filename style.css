@@ -163,6 +163,10 @@ section#transaction #data-table tbody tr:hover {
     opacity: 1;
 }
 
+section#transaction #data-table tbody tr img {
+    cursor: pointer;
+}
+
 /* LINKS E BUTTONS */
 a {
     text-decoration: none;
