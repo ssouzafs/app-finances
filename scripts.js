@@ -341,14 +341,3 @@ App = {
 }
 
 App.init()
-
-// Transaction.add({
-//     id: 3,
-//     description: 'teste',
-//     amount: 200,
-//     date: '26/12/2021'
-// })
-
-// Transaction.remove(3)
-
-
