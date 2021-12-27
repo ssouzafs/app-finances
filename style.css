@@ -1,0 +1,326 @@
+/* GLOBAL */
+:root {
+    --color-dark-blue: #363f5f;
+    --color-dark-purple: rgb(47, 3, 88);
+    --color-purple: rgb(98, 6, 160);
+    --color-green: rgb(40, 179, 148);
+    --color-danger: rgb(218, 86, 86);
+    --color-white-ice: #f0f2f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 93.75%;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: "Poppins", sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container {
+    width: min(90vw, 800px);
+    margin: 0 auto;
+}
+
+section > h1 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-dark-blue);
+    font-weight: 400;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    background-color: var(--color-dark-purple);
+    padding: 4rem 0px 12rem;
+}
+
+header #logo {
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.6rem;
+}
+header #logo span {
+    font-weight: 200;
+}
+
+/* BALANCE */
+section#balance {
+    margin-top: -5rem;
+}
+
+section#balance h1 {
+    margin-top: 0;
+    color: #fff;
+}
+
+/* CARDS */
+section#balance .card {
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    margin-bottom: 1.5rem;
+    color: var(--color-dark-blue);
+}
+
+section#balance .card h2 {
+    font-weight: 400;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section#balance .card p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-top: 1rem;
+}
+
+section#balance .card.total {
+    background-color: var(--color-purple);
+    color: #fff;
+}
+
+/* TRANSACTION */
+section#transaction {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+section#transaction #data-table {
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    color: var(--color-dark-blue);
+}
+
+section#transaction #data-table th {
+    background-color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    text-align: left;
+}
+
+section#transaction #data-table td {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+section#transaction #data-table td.description {
+    color: var(--color-dark-blue);
+}
+
+section#transaction #data-table td.expense {
+    color: var(--color-danger);
+}
+section#transaction #data-table td.income {
+    color: var(--color-green);
+}
+
+section#transaction #data-table thead tr th:first-child,
+section#transaction #data-table tbody tr td:first-child {
+    border-radius: 5px 0px 0px 5px;
+    -webkit-border-radius: 5px 0px 0px 5px;
+    -moz-border-radius: 5px 0px 0px 5px;
+}
+
+section#transaction #data-table thead tr th:last-child,
+section#transaction #data-table tbody tr td:last-child {
+    border-radius: 0px 5px 5px 0;
+}
+
+section#transaction #data-table tbody tr {
+    opacity: 0.6975;
+}
+
+section#transaction #data-table tbody tr:hover {
+    opacity: 1;
+}
+
+/* LINKS E BUTTONS */
+a {
+    text-decoration: none;
+}
+
+.btn {
+    border: none;
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn.btn-save {
+    background-color: var(--color-green);
+}
+
+.btn.btn-cancel {
+    color: var(--color-danger);
+    border: 1px var(--color-danger) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.btn.btn-cancel:hover {
+    background-color: var(--color-danger);
+    color: #fff;
+}
+
+.button.new {
+    display: inline-block;
+    color: var(--color-green);
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+    padding: 4px 8px ;
+    border:var(--color-green) 1px solid;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    font-weight: 300;
+}
+
+.button.new:hover {
+    opacity: 1;
+    font-weight: 400;
+}
+
+/* MODAL */
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay .modal-overlay-content {
+    background-color: var(--color-white-ice);
+    padding: 2.4rem;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    z-index: 1;
+}
+
+.modal-overlay-content .form-modal {
+    max-width: 500px;
+}
+
+.modal-overlay-content .form-modal h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.modal-overlay-content .form-modal .input-group {
+    margin-top: 0.8rem;
+}
+
+.modal-overlay-content .form-modal .input-group small {
+    opacity: 0.7;
+    font-weight: 300;
+    color: var(--color-danger);
+}
+
+.modal-overlay-content .form-modal .input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-overlay-content .form-modal .input-group.actions .btn {
+    width: 48%;
+    text-align: center;
+}
+
+.modal-overlay-content .form-modal input {
+    border: 1px solid var(--color-green);
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    padding: 0.9rem;
+    width: 100%;
+}
+
+.modal-overlay-content .form-modal input:focus {
+    outline: none !important;
+    box-shadow: 0 0 3px var(--color-green);
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+    font-size: 1.1rem;
+    position: relative;
+    bottom:0;
+}
+
+.footer p {
+    opacity: 0.8;
+    font-weight: 300;
+    color: var(--color-dark-blue);
+}
+
+/* RESPONSIVE */
+@media (min-width: 800px) {
+    html {
+        font-size: 87.5%; /* 14px */
+    }
+
+    /* BALANCE */
+    section#balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
